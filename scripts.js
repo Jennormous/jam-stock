@@ -15,7 +15,7 @@ function getData(result) {
     let index = arr[i];
     newArr[i] = result[index];
   }
-  console.log(newArr);
+  createCard(newArr);
 }
 
 //where the cards will be generated
@@ -24,17 +24,32 @@ const stockData = document.querySelector("#stock-data");
 //create stock cards
 
 function createCard(dataSet) {
-  for(i=0; dataSet.length; i++) {
-
+  for (i = 0; i < dataSet.length; i++) {
     //create card
     let card = document.createElement("div");
-    card.className="stock-data__card";
+    card.className = "stock-data__card";
     //create symbol
-    let cardSymb = document.createElement("h3");
+    let cardSym = document.createElement("h3");
     cardSym.className = "stock-data__card--symb";
     //create symbol name
-    let
+    let symName = document.createElement("p");
+    symName.className = "stock-data__card--name";
+    //create symbol date
+    let cardDate = document.createElement("p");
+    cardDate.className = "stock-data__card--date";
 
+    let symb = document.createTextNode(dataSet[i].symbol);
+    cardSym.appendChild(symb);
+    card.appendChild(cardSym);
 
+    let name = document.createTextNode(dataSet[i].name);
+    symName.appendChild(name);
+    card.appendChild(symName);
+
+    let date = document.createTextNode(dataSet[i].date);
+    cardDate.appendChild(date);
+    card.appendChild(cardDate);
+
+    stockData.appendChild(card);
   }
 }
