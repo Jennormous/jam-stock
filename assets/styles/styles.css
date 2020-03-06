@@ -1,0 +1,52 @@
+body,
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0e9091;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(22%, #0e9091), color-stop(67%, rgba(85, 85, 85, 0.920606)));
+  background: linear-gradient(0deg, #0e9091 22%, rgba(85, 85, 85, 0.920606) 67%);
+}
+
+header {
+  height: 200px;
+  width: 95%;
+  margin: 10px auto;
+}
+
+#stock-data {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.stock-data__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  margin: 5px;
+}
+/*# sourceMappingURL=styles.css.map */

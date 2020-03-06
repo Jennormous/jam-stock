@@ -4,3 +4,38 @@ body,
   margin: 0;
   padding: 0;
 }
+
+body {
+  background: rgb(14, 144, 145);
+  background: linear-gradient(
+    0deg,
+    rgba(14, 144, 145, 1) 22%,
+    rgba(85, 85, 85, 0.9206057422969187) 67%
+  );
+}
+
+header {
+  height: 200px;
+  width: 95%;
+  margin: 10px auto;
+}
+
+
+#stock-data {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.stock-data {
+  &__card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin: 5px;
+  }
+}

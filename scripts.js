@@ -27,10 +27,11 @@ function createCard(dataSet) {
   for (i = 0; i < dataSet.length; i++) {
     //create card
     let card = document.createElement("div");
-    card.className = "stock-data__card";
+    card.className =
+      "stock-data__card font-mono bg-gray-100 max-w-sm rounded overflow-hidden shadow-lg";
     //create symbol
     let cardSym = document.createElement("h3");
-    cardSym.className = "stock-data__card--symb";
+    cardSym.className = "stock-data__card--symb font-bold text-l mb-2";
     //create symbol name
     let symName = document.createElement("p");
     symName.className = "stock-data__card--name";
@@ -53,3 +54,31 @@ function createCard(dataSet) {
     stockData.appendChild(card);
   }
 }
+
+const searchBar = document.querySelector("input");
+
+searchBar.addEventListener("keyup", (event) => {
+  console.log(event.target.value);
+  event.preventDefault();
+
+  let search = event.target.value;
+  search = search.toUpperCase();
+  let card = document.querySelectorAll(".stock-data__card");
+  let cardSym = document.querySelectorAll(".stock-data__card--symb");
+  let symName = document.querySelectorAll(".stock-data__card--name");
+
+  if (search === "") {
+    for (i = 0; i < newArr.length; i++) {
+      card[i].style.display = "";
+    }
+  }
+  for (i = 0; i < newArr.length; i++) {
+    //console.log(cardSym[i].innerText.indexOf(search));
+    if (
+      cardSym[i].innerText.indexOf(search) === -1 ||
+      symName[i].innerText.indexOf(search) === -1
+    ) {
+      card[i].style.display = "none";
+    }
+  }
+});
